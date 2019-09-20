@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="author" content="Mintu Nath" />
+
+<meta name="date" content="2019-09-12" />
+
+<title>ABACUS Activities</title>
+
+
+
+
+
+
+<style type="text/css">body {
+background-color: #fff;
+margin: 1em auto;
+max-width: 800px;
+overflow: visible;
+padding-left: 2em;
+padding-right: 2em;
+font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 14px;
+line-height: 20px;
+}
+#header {
+text-align: center;
+}
+#TOC {
+clear: both;
+margin: 0 0 10px 0;
+padding: 4px;
+border: 1px solid #CCCCCC;
+border-radius: 5px;
+background-color: #f6f6f6;
+font-size: 13px;
+line-height: 1.3;
+}
+#TOC .toctitle {
+font-weight: bold;
+font-size: 15px;
+margin-left: 5px;
+}
+#TOC ul {
+padding-left: 40px;
+margin-left: -1.5em;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+#TOC ul ul {
+margin-left: -2em;
+}
+#TOC li {
+line-height: 16px;
+}
+table:not([class]) {
+margin: auto;
+min-width: 40%;
+border-width: 1px;
+border-color: #DDDDDD;
+border-style: outset;
+border-collapse: collapse;
+}
+table[summary="R argblock"] {
+width: 100%;
+border: none;
+}
+table:not([class]) th {
+border-width: 2px;
+padding: 5px;
+border-style: inset;
+}
+table:not([class]) td {
+border-width: 1px;
+border-style: inset;
+line-height: 18px;
+padding: 5px 5px;
+}
+table:not([class]), table:not([class]) th, table:not([class]) td {
+border-left-style: none;
+border-right-style: none;
+}
+table:not([class]) tr.odd {
+background-color: #f7f7f7;
+}
+p {
+margin: 0.5em 0;
+}
+blockquote {
+background-color: #f6f6f6;
+padding: 13px;
+padding-bottom: 1px;
+}
+hr {
+border-style: solid;
+border: none;
+border-top: 1px solid #777;
+margin: 28px 0;
+}
+dl {
+margin-left: 0;
+}
+dl dd {
+margin-bottom: 13px;
+margin-left: 13px;
+}
+dl dt {
+font-weight: bold;
+}
+ul {
+margin-top: 0;
+}
+ul li {
+list-style: circle outside;
+}
+ul ul {
+margin-bottom: 0;
+}
+pre, code {
+background-color: #f5f5f5;
+border-radius: 3px;
+color: #333;
+}
+pre {
+overflow-x: auto;
+border-radius: 3px;
+margin: 5px 0 10px 0;
+padding: 10px;
+}
+pre:not([class]) {
+background-color: white;
+border: #f5f5f5 1px solid;
+}
+pre:not([class]) code {
+color: #444;
+background-color: white;
+}
+code {
+font-family: monospace;
+font-size: 90%;
+}
+p > code, li > code {
+padding: 2px 4px;
+color: #d14;
+border: 1px solid #e1e1e8;
+white-space: inherit;
+}
+div.figure {
+text-align: center;
+}
+table > caption, div.figure p.caption {
+font-style: italic;
+}
+table > caption span, div.figure p.caption span {
+font-style: normal;
+font-weight: bold;
+}
+p {
+margin: 0 0 10px;
+}
+table:not([class]) {
+margin: auto auto 10px auto;
+}
+img:not([class]) {
+background-color: #FFFFFF;
+padding: 2px;
+border-radius: 3px;
+border: 1px solid #CCCCCC;
+margin: 0 5px;
+max-width: 100%;
+}
+h1 {
+margin-top: 0;
+font-size: 35px;
+line-height: 40px;
+}
+h2 {
+border-bottom: 4px solid #f5f5f5;
+padding-top: 10px;
+padding-bottom: 2px;
+font-size: 145%;
+}
+h3 {
+border-bottom: 2px solid #f5f5f5;
+padding-top: 10px;
+font-size: 120%;
+}
+h4 {
+border-bottom: 1px solid #f5f5f5;
+margin-left: 8px;
+font-size: 105%;
+}
+h5, h6 {
+border-bottom: 1px solid #ccc;
+font-size: 105%;
+}
+a {
+color: #0033dd;
+text-decoration: none;
+}
+a:hover {
+color: #6666ff; }
+a:visited {
+color: #800080; }
+a:visited:hover {
+color: #BB00BB; }
+a[href^="http:"] {
+text-decoration: underline; }
+a[href^="https:"] {
+text-decoration: underline; }
+div.r-help-page {
+background-color: #f9f9f9;
+border-bottom: #ddd 1px solid;
+margin-bottom: 10px;
+padding: 10px;
+}
+div.r-help-page:hover {
+background-color: #f4f4f4;
+}
+
+code > span.kw { color: #555; font-weight: bold; } 
+code > span.dt { color: #902000; } 
+code > span.dv { color: #40a070; } 
+code > span.bn { color: #d14; } 
+code > span.fl { color: #d14; } 
+code > span.ch { color: #d14; } 
+code > span.st { color: #d14; } 
+code > span.co { color: #888888; font-style: italic; } 
+code > span.ot { color: #007020; } 
+code > span.al { color: #ff0000; font-weight: bold; } 
+code > span.fu { color: #900; font-weight: bold; } 
+code > span.er { color: #a61717; background-color: #e3d2d2; } 
+</style>
+
+
+
+
+</head>
+
+<body>
+
+
+
+
+<h1 class="title toc-ignore">ABACUS Activities</h1>
+<h3 class="subtitle">ABACUS: Apps Based Activities for Communicating and Understanding Statistics</h3>
+<h4 class="author">Mintu Nath</h4>
+<h4 class="date">2019-09-12</h4>
+
+
+<div id="TOC">
+<ul>
+<li><a href="#abacus">ABACUS</a></li>
+<li><a href="#normal-distribution">Normal Distribution</a><ul>
+<li><a href="#intended-learning-outcomes">Intended Learning Outcomes</a></li>
+<li><a href="#activity">Activity</a></li>
+</ul></li>
+<li><a href="#sampling-distributions">Sampling Distributions</a><ul>
+<li><a href="#intended-learning-outcomes-1">Intended Learning Outcomes</a></li>
+<li><a href="#activity-9">Activity</a></li>
+</ul></li>
+<li><a href="#hypothesis-testing-one-sample-z-test">Hypothesis Testing: One-Sample Z-Test</a><ul>
+<li><a href="#intended-learning-outcomes-2">Intended Learning Outcomes</a></li>
+<li><a href="#activity-10">Activity</a></li>
+</ul></li>
+<li><a href="#hypothesis-testing-one-sample-students-t-test">Hypothesis Testing: One-Sample Student’s t-Test</a><ul>
+<li><a href="#intended-learning-outcomes-3">Intended Learning Outcomes</a></li>
+<li><a href="#activity-11">Activity</a></li>
+</ul></li>
+<li><a href="#hypothesis-testing-two-sample-independent-unpaired-t-test">Hypothesis Testing: Two-Sample Independent (Unpaired) t-Test</a><ul>
+<li><a href="#intended-learning-outcomes-4">Intended Learning Outcomes</a></li>
+<li><a href="#activity-12">Activity</a></li>
+</ul></li>
+<li><a href="#hypothesis-testing-one-way-analysis-of-variance">Hypothesis Testing: One-way Analysis of Variance</a><ul>
+<li><a href="#intended-learning-outcomes-5">Intended Learning Outcomes</a></li>
+<li><a href="#activity-13">Activity</a></li>
+</ul></li>
+</ul>
+</div>
+
+<hr />
+<div id="abacus" class="section level1">
+<h1>ABACUS</h1>
+<hr />
+<p>The basic premise of ABACUS is to explore, understand and assess the concepts and theories of simple statistical techniques and tools using simulation and graphics when the TRUTH is known. It creates an environment to communicate and understand the Statistical concepts to a wider audience without complex mathematical derivation or elaborate programming. The ABACUS uses two techniques to convey the concepts: it implements the power of statistical simulation to simulate data under wide-ranging sampling scenarios, and secondly, it uses graphical interfaces to visualise the statistical concepts.</p>
+<p>In the following sections, a list of Activities is suggested. Teachers can implement and integrate these activities with the current lectures and practical classes. Please send your suggestions and ideas for further improvement of these activities.</p>
+<p><br> <br></p>
+<hr />
+</div>
+<div id="normal-distribution" class="section level1">
+<h1>Normal Distribution</h1>
+<hr />
+<p><br></p>
+<div id="intended-learning-outcomes" class="section level2">
+<h2>Intended Learning Outcomes</h2>
+<ul>
+<li>Explain the probability density function and cumulative distribution function of Normal distribution and Standard normal distribution.</li>
+<li>Understand and create a histogram using different bin size and identify the shape of the Normal distribution.</li>
+<li>Demonstrate the concept and effect of centring and scaling of a variable.</li>
+<li>Describe properties of Normal distribution and Standard normal distribution.</li>
+<li>Describe the concepts of cumulative probability, probability tail and quantile and the relationship between these terms.</li>
+<li>Recognise the concept of statistical simulation and the importance of seed value in a computer simulation.</li>
+<li>Explain and generalise the statistical concepts and implement in your area of research.</li>
+</ul>
+<p><br></p>
+</div>
+<div id="activity" class="section level2">
+<h2>Activity</h2>
+<p>For each of the following activity:</p>
+<ul>
+<li>Describe the problem</li>
+<li>Identify the assumptions (if any)</li>
+<li>Outline the successive steps of calculation supported by appropriate formulae</li>
+<li>Conduct the apps-based experiment</li>
+<li>Summarise the outputs</li>
+<li>Interpret the results</li>
+<li>Draw valid conclusions</li>
+<li>Generalise the problem in your research area</li>
+</ul>
+<p><br></p>
+<div id="activity-1" class="section level3">
+<h3>Activity 1</h3>
+<ul>
+<li>Select the checkbox against “Check the box to update instantly”.</li>
+<li>Select the tab “Sample” and note the shape of the sample data,</li>
+<li>Increase the sample size to &gt;1000; describe the change of shape of the distribution.</li>
+<li>Increase the sample size further and describe the shape.</li>
+<li>Change the number of bins to &gt;300. Explain the shape.</li>
+<li>Overlay the data with Normal density function by selecting the appropriate option.</li>
+</ul>
+<p><br></p>
+</div>
+<div id="activity-2" class="section level3">
+<h3>Activity 2</h3>
+<ul>
+<li>Reload the app (click ‘Refresh’ or ‘Reload’ button in the browser).</li>
+<li>Select the checkbox against “Check the box to update instantly”.</li>
+<li>Select the tab “Distribution”.</li>
+<li>Increase or decrease the value of <span class="math inline">\(\mu\)</span>; this is analogous to centring effect.</li>
+<li>Increase or decrease the value of <span class="math inline">\(\sigma\)</span>; this is analogous to scale effect.</li>
+<li>Explain the Probability Density function due to the centring and scaling of the data.</li>
+</ul>
+<p><br></p>
+</div>
+<div id="activity-3" class="section level3">
+<h3>Activity 3</h3>
+<ul>
+<li>Reload the app (click ‘Refresh’ or ‘Reload’ button in the browser).</li>
+<li>Select the checkbox against “Check the box to update instantly”.</li>
+<li>Select the tab “Probability and Quantile”.</li>
+<li>Change the point on the slider of ‘Cumulative probability’.</li>
+<li>Select different options for the probability tails.</li>
+<li>Describe the concepts of cumulative probability, probability tail and quantile and the relationship between these terms.</li>
+</ul>
+<p><br></p>
+</div>
+<div id="activity-4" class="section level3">
+<h3>Activity 4</h3>
+<ul>
+<li>Reload the app (click ‘Refresh’ or ‘Reload’ button in the browser).</li>
+<li>Select the checkbox against “Check the box to update instantly”.</li>
+<li>Select the tab “Probability and Quantile”.</li>
+<li>Using the plots for probability density function and cumulative density function as well as the input values, prove that for a Normal distribution: Mean = Median = Mode.</li>
+<li>Explain that Normal distribution is unimodal and symmetric around the point <span class="math inline">\(x = \mu\)</span>.</li>
+</ul>
+<p><br></p>
+</div>
+<div id="activity-5" class="section level3">
+<h3>Activity 5</h3>
+<ul>
+<li>Reload the app (click ‘Refresh’ or ‘Reload’ button in the browser).</li>
+<li>Select the checkbox against “Check the box to update instantly”.</li>
+<li>Select the tab “Probability and Quantile”.</li>
+<li>Given that the variable follows a Normal distribution with the population parameters as <span class="math inline">\(\mu = 20\)</span> and <span class="math inline">\(\sigma = 4\)</span>, find out the following:
+<ul>
+<li>The minimum value of top 5%, 10%, 20%, 50% of the population</li>
+<li>The maximum value of bottom 5%, 10%, 20%, 50% of the population</li>
+<li>The minimum value of top 97.5% of the population</li>
+<li>The maximum value of the bottom 2.5% of the population</li>
+</ul></li>
+</ul>
+<p>Note: To fine-tune the point on the slider, move the slider nearer the value and then use left or right keys to fine-tune it.</p>
+<p><br></p>
+</div>
+<div id="activity-6" class="section level3">
+<h3>Activity 6</h3>
+<ul>
+<li>Reload the app (click ‘Refresh’ or ‘Reload’ button in the browser).</li>
+<li>Select the checkbox against “Check the box to update instantly”.</li>
+<li>Select the tab “Probability and Quantile”.</li>
+<li>Given that the variable follows a Normal distribution with the population parameters as <span class="math inline">\(\mu = 20\)</span> and <span class="math inline">\(\sigma = 4\)</span>, find out the following:
+<ul>
+<li>What proportion of the population is greater than 26.58?</li>
+<li>What proportion of the population is less than 26.58?</li>
+<li>What proportion of the population is greater than 13.42?</li>
+<li>What proportion of the population is greater than 13.42?</li>
+<li>What proportion of the population is between 12.16 and 27.84?</li>
+</ul></li>
+<li>Explain the area under the curve.</li>
+<li>What is the total probability under the Normal distribution curve and over the x-axis?</li>
+</ul>
+<p>Note: To fine-tune the point on the slider, move the slider nearer the value and then use left or right keys to fine-tune it.</p>
+<p><br></p>
+</div>
+<div id="activity-7" class="section level3">
+<h3>Activity 7</h3>
+<ul>
+<li>Reload the app (click ‘Refresh’ or ‘Reload’ button in the browser).</li>
+<li>Select the checkbox against “Check the box to update instantly”.</li>
+<li>Select the tab “Probability and Quantile”.</li>
+<li>Create the probability density function and cumulative density function of the Standard Normal distribution.</li>
+<li>Given that the variable (<span class="math inline">\(z\)</span>) follows a Standard Normal distribution, find out the following:</li>
+<li>The value of <span class="math inline">\(z\)</span> with the lower-tail cumulative probability of 0.05</li>
+<li>The value of <span class="math inline">\(z\)</span> with the upper-tail cumulative probability of 0.05</li>
+<li>The value of <span class="math inline">\(z\)</span> with the lower-tail cumulative probability of 0.95</li>
+<li>The value of <span class="math inline">\(z\)</span> with the upper-tail cumulative probability of 0.95</li>
+<li>The value of <span class="math inline">\(z\)</span> with the upper-tail cumulative probability of 0.50</li>
+<li>The value of <span class="math inline">\(z\)</span> with the two-tailed cumulative probability of 0.05</li>
+<li>The value of <span class="math inline">\(z\)</span> with the two-tailed cumulative probability of 0.01</li>
+</ul>
+<p>Note: To fine-tune the point on the slider, move the slider nearer the value and then use left or right keys to fine-tune it.</p>
+<p><br></p>
+</div>
+<div id="activity-8" class="section level3">
+<h3>Activity 8</h3>
+<ul>
+<li>Reload the app (click ‘Refresh’ or ‘Reload’ button in the browser).</li>
+<li>Identify a variable from your subject area that follows Normal distribution.</li>
+<li>Enter the true population mean and true population standard deviation for the variable (based on literature or prior available data).</li>
+<li>Explore sample characteristics and distribution functions; explain the outcomes and associated plots.</li>
+<li>Go to the ‘Sample’ tab.</li>
+<li>Press ‘Update’ button multiple times and explore the random sampling scenarios.</li>
+<li>Explain the concept of statistical simulation and the importance of seed value.</li>
+</ul>
+<p><br> <br></p>
+<hr />
+</div>
+</div>
+</div>
+<div id="sampling-distributions" class="section level1">
+<h1>Sampling Distributions</h1>
+<hr />
+<p><br></p>
+<div id="intended-learning-outcomes-1" class="section level2">
+<h2>Intended Learning Outcomes</h2>
+<ul>
+<li>Describe the concept of random sampling and sampling units.</li>
+<li>Recognise the concept of parameters and estimates.</li>
+<li>Demonstrate and generalise the distribution of sample means.</li>
+<li>Summarise the expected value of the sample mean and sample standard deviation.</li>
+<li>Interpret standard error of a sample mean and its importance in the context of random sampling.</li>
+<li>Construct the confidence interval and appraise the concept relevant to sampling.</li>
+<li>Describe the concepts of cumulative probability, probability tail and quantile and the relationship between them.</li>
+<li>Explain and generalise the statistical theory underlying sampling distribution and implement in own area of research.</li>
+</ul>
+<p><br></p>
+</div>
+<div id="activity-9" class="section level2">
+<h2>Activity</h2>
+<p>For each of the following activity:</p>
+<ul>
+<li>Describe the problem</li>
+<li>Identify the assumptions (if any)</li>
+<li>Outline the successive steps of calculation supported by appropriate formulae</li>
+<li>Conduct the apps-based experiment</li>
+<li>Summarise the outputs</li>
+<li>Interpret the results</li>
+<li>Draw valid conclusions</li>
+<li>Generalise the problem in your research area</li>
+</ul>
+<p><br></p>
+<div id="activity-1-1" class="section level3">
+<h3>Activity 1</h3>
+<ul>
+<li>Load the app</li>
+<li>Select the checkbox against “Check the box to update instantly”.</li>
+<li>Select the tab “Sample”. Note the spread of the sampled data as well as the mean and sd of each sample.</li>
+<li>Increase the sample size to &gt;200. Describe how the spread of the sampled data is changing.</li>
+<li>Select the tab “Sample Estimator”. Note the mean of sample means, mean of sample standard deviations (SD).</li>
+<li>Explain the meaning of the expected value of sample means and sample standard deviations (SD).</li>
+<li>Note the standard deviation of sample means. What does it signify?</li>
+<li>What is the standard error of the sample mean?</li>
+<li>What is the distribution of the sample mean?</li>
+<li>Select the tab “Confidence Interval”; explain the concept of a 95% confidence interval.</li>
+<li>Explain the concept of sampling distribution under the Frequentist inferential framework.</li>
+</ul>
+<p><br></p>
+</div>
+<div id="activity-2-1" class="section level3">
+<h3>Activity 2</h3>
+<ul>
+<li>Reload the app (click ‘Refresh’ or ‘Reload’ button in the browser).</li>
+<li>Select the checkbox against “Check the box to update instantly”.</li>
+<li>Investigate the effect of altering the following input values on the standard error of mean and 95% confidence interval of mean:
+<ul>
+<li>Increase and decrease <span class="math inline">\(\mu\)</span></li>
+<li>Increase and decrease <span class="math inline">\(\sigma\)</span></li>
+<li>Increase and decrease sample size</li>
+</ul></li>
+<li>Explore the ‘central limit theorem’ and explain how the theorem generalises to the theory of sampling distribution.</li>
+</ul>
+<p><br></p>
+</div>
+<div id="activity-3-1" class="section level3">
+<h3>Activity 3</h3>
+<ul>
+<li>Reload the app (click ‘Refresh’ or ‘Reload’ button in the browser).</li>
+<li>Identify a variable from your subject area that follows the Normal distribution.</li>
+<li>Enter the true population mean and true population standard deviation for the variable (based on literature or prior available data).</li>
+<li>Explore sample characteristics and distribution functions; explain the outcomes and associated plots in the context of the sampling distribution.</li>
+<li>Illustrate your results and identify how different sample characteristics may affect your experiment.</li>
+<li>Explain the concept of statistical simulation and the importance of seed value.</li>
+</ul>
+<p><br> <br></p>
+<hr />
+</div>
+</div>
+</div>
+<div id="hypothesis-testing-one-sample-z-test" class="section level1">
+<h1>Hypothesis Testing: One-Sample Z-Test</h1>
+<hr />
+<p><br></p>
+<div id="intended-learning-outcomes-2" class="section level2">
+<h2>Intended Learning Outcomes</h2>
+<ul>
+<li>Describe the steps of null hypotheses significance testing of the mean for one sample when the population variance is known.</li>
+<li>Summarise the data and identify the inputs for conducting the hypothesis testing.</li>
+<li>Conduct hypothesis testing, evaluate the outcomes, interpret the results and draw valid conclusions.</li>
+<li>Explain and generalise the statistical concepts and implement in own area of research.</li>
+</ul>
+<p><br></p>
+</div>
+<div id="activity-10" class="section level2">
+<h2>Activity</h2>
+<p>Consider the following statements along with specific instructions given for each activity:</p>
+<ul>
+<li>Describe the steps of null hypotheses significance testing and associated assumptions</li>
+<li>State null and alternative hypotheses.</li>
+<li>Record the statistical significance level (Type 1 error) and probability tails</li>
+<li>Identify the appropriate test statistic.</li>
+<li>Descriptive statistics of the observed sample data.</li>
+<li>Explain the test statistic, p-value, quantile under type 1 error, 95% confidence interval.</li>
+<li>Present the summary of the data, interpret the results and draw appropriate conclusions.</li>
+<li>Assess that the conclusion conforms with test statistic, p-value, quantile under type 1 error and estimated 95% confidence interval.</li>
+</ul>
+<p><br></p>
+<div id="activity-1-2" class="section level3">
+<h3>Activity 1</h3>
+<ul>
+<li>Accept all default values; click the ‘Update’ button ONCE.</li>
+<li>Note the z-statistic, p-value, difference, 95% CI of difference.</li>
+</ul>
+<p><br></p>
+</div>
+<div id="activity-2-2" class="section level3">
+<h3>Activity 2</h3>
+<ul>
+<li>Reload the app (click ‘Refresh’ or ‘Reload’ button in the browser).</li>
+<li>Accept all default values AND select ‘lower-tail probability’</li>
+<li>Click the ‘Update’ button ONCE.</li>
+<li>Note the z-statistic, p-value, difference, 95% CI of difference.</li>
+<li>Which values got changed compared to Activity 1 and why?</li>
+<li>What are the interpretations? Do you expect these results?</li>
+</ul>
+<p><br></p>
+</div>
+<div id="activity-3-2" class="section level3">
+<h3>Activity 3</h3>
+<ul>
+<li>Reload the app (click ‘Refresh’ or ‘Reload’ button in the browser).</li>
+<li>Accept all default values; click the ‘Update’ button FIVE times.</li>
+<li>Note that the first update should produce the identical output as Activity 1.</li>
+<li>Note the z-statistic and p-value on each simulation (each click of Update button).</li>
+<li>Do you have different interpretations at each simulation stage? Can you explain the results?</li>
+<li>Do you have any instance when you cannot reject the null hypotheses? What could be the reasons?</li>
+</ul>
+<p><br></p>
+</div>
+<div id="activity-4-1" class="section level3">
+<h3>Activity 4</h3>
+<ul>
+<li>Reload the app (click ‘Refresh’ or ‘Reload’ button in the browser).</li>
+<li>Select “Check the box to update instantly”.</li>
+<li>Investigate the effect of the following:
+<ul>
+<li>Increase and decrease <span class="math inline">\(\mu_0\)</span></li>
+<li>Increase and decrease <span class="math inline">\(\sigma\)</span></li>
+<li>Increase and decrease sample size</li>
+<li>Increase and decrease type 1 error</li>
+<li>Change the probability tail to lower/upper or both</li>
+</ul></li>
+<li>Explain and interpret the outcomes for each scenario.</li>
+<li>Do you have any instance when the outcomes are different from what you expected given the TRUTH is known?</li>
+<li>What could be the reasons?</li>
+<li>While explaining, keep in mind that ABACUS is simulating the data at each instance aligning with the Frequentist inferential framework. When in doubt, deselect ‘check the box to update instantly’ and click the ‘Update’ button multiple times and explore each outcome.</li>
+<li>Also, note that the statistical power of a test depends on other essential components. Can you explain these components based on your observations with different scenarios above?</li>
+</ul>
+<p><br></p>
+</div>
+<div id="activity-5-1" class="section level3">
+<h3>Activity 5</h3>
+<ul>
+<li>Reload the app (click ‘Refresh’ or ‘Reload’ button in the browser).</li>
+<li>Identify a variable from your subject area.</li>
+<li>Enter the true population mean and true population standard deviation for the variable (based on literature or prior available data).</li>
+<li>Explore the sampling scenarios and explain the outcomes due to changes of mu0, sigma, sample size, type 1 error and probability tail.</li>
+</ul>
+<p><br> <br></p>
+<hr />
+</div>
+</div>
+</div>
+<div id="hypothesis-testing-one-sample-students-t-test" class="section level1">
+<h1>Hypothesis Testing: One-Sample Student’s t-Test</h1>
+<hr />
+<p><br></p>
+<div id="intended-learning-outcomes-3" class="section level2">
+<h2>Intended Learning Outcomes</h2>
+<ul>
+<li>Describe the steps of null hypotheses significance testing.</li>
+<li>Test the null hypothesis that the sample data are from a population with a hypothesised mean when the population variance is known.</li>
+<li>Summarise the data and identify the inputs for conducting the hypothesis testing and associated assumptions.</li>
+<li>Conduct hypothesis testing, evaluate the outcomes, interpret the results and draw valid conclusions.</li>
+<li>Explain and generalise the statistical concepts and implement in own area of research.</li>
+</ul>
+<p><br></p>
+</div>
+<div id="activity-11" class="section level2">
+<h2>Activity</h2>
+<p>Consider the following statements along with specific instruction given for each activity:</p>
+<ul>
+<li>Describe the steps of null hypotheses significance testing</li>
+<li>State null and alternative hypotheses</li>
+<li>Record the statistical significance level (Type 1 error) and probability tails</li>
+<li>Identify the appropriate test statistic</li>
+<li>Descriptive statistics of the observed sample data</li>
+<li>Explain the test statistic, p-value, quantile under type 1 error, 95% confidence interval</li>
+<li>Present the summary of the data, interpret the results and draw appropriate conclusions</li>
+<li>Assess that the conclusion conforms with test statistic, p-value, quantile under type 1 error, 95% confidence interval</li>
+</ul>
+<p><br></p>
+<div id="activity-1-3" class="section level3">
+<h3>Activity 1</h3>
+<ul>
+<li>Accept all default values; click the ‘Update’ button ONCE.</li>
+<li>Note the t-statistic, p-value, difference and 95% CI of difference.</li>
+<li>Do you expect these results given the TRUTH is known? Explain.</li>
+</ul>
+<p><br></p>
+</div>
+<div id="activity-2-3" class="section level3">
+<h3>Activity 2</h3>
+<ul>
+<li>Reload the app (click ‘Refresh’ or ‘Reload’ button in the browser).</li>
+<li>Accept all default values and ENTER: <span class="math inline">\(\sigma = 3\)</span>, sample size = 50</li>
+<li>Click the ‘Update’ button ONCE</li>
+<li>Note the t-statistic, p-value, difference and 95% CI of difference</li>
+<li>What are the interpretations? Do you expect these results?</li>
+</ul>
+<p><br></p>
+</div>
+<div id="activity-3-3" class="section level3">
+<h3>Activity 3</h3>
+<ul>
+<li>Reload the app (click ‘Refresh’ or ‘Reload’ button in the browser).</li>
+<li>Accept all default values; click the ‘Update’ button FIVE times.</li>
+<li>Note that the first update should produce the identical output as Activity 1.</li>
+<li>Note the t-statistic and p-value on each simulation (each click of Update button)</li>
+<li>Do you have different interpretations at each simulation stage? Can you explain the results?</li>
+<li>Do you have any instance when you cannot reject the null hypotheses? What could be the reasons?</li>
+<li>How do compare these outcomes with the similar activity that you conducted for ‘Hypothesis testing: One sample, known variance’</li>
+</ul>
+<p><br></p>
+</div>
+<div id="activity-4-2" class="section level3">
+<h3>Activity 4</h3>
+<ul>
+<li>Reload the app (click ‘Refresh’ or ‘Reload’ button in the browser).</li>
+<li>Check the box to update instantly.</li>
+<li>Investigate the following scenarios and explain each instance:
+<ul>
+<li>Increase and decrease <span class="math inline">\(\mu_0\)</span></li>
+<li>Increase and decrease <span class="math inline">\(\sigma\)</span></li>
+<li>Increase and decrease sample size</li>
+<li>Increase and decrease type 1 error</li>
+<li>Change the probability tail to lower/upper or both</li>
+</ul></li>
+<li>Explain and interpret the outcomes for each scenario.</li>
+<li>Do you have any instance when the outcomes are different from what you expected given the TRUTH is known?</li>
+<li>What could be the reasons?</li>
+<li>While explaining, keep in mind that ABACUS is simulating the data at each instance aligning with the Frequentist inferential framework. When in doubt, deselect ‘check the box to update instantly’ and click the ‘Update’ button multiple times and explore each outcome.</li>
+<li>Also, note that the statistical power of a test depends on other essential components. Can you explain these components based on your observations with different scenarios above?</li>
+</ul>
+<p><br></p>
+</div>
+<div id="activity-5-2" class="section level3">
+<h3>Activity 5</h3>
+<ul>
+<li>Reload the app (click ‘Refresh’ or ‘Reload’ button in the browser).</li>
+<li>Identify a variable from your subject area.</li>
+<li>Enter the true population mean and true population standard deviation for the variable (based on literature or prior available data).</li>
+<li>Explore the sampling scenarios and explain the outcomes due to changes of mu0, sigma, sample size, type 1 error and probability tail.</li>
+</ul>
+<p><br> <br></p>
+<hr />
+</div>
+</div>
+</div>
+<div id="hypothesis-testing-two-sample-independent-unpaired-t-test" class="section level1">
+<h1>Hypothesis Testing: Two-Sample Independent (Unpaired) t-Test</h1>
+<hr />
+<p><br></p>
+<div id="intended-learning-outcomes-4" class="section level2">
+<h2>Intended Learning Outcomes</h2>
+<ul>
+<li>Describe the steps of null hypotheses significance testing.</li>
+<li>Test the null hypothesis that two independent groups of observations are sampled from the same population.</li>
+<li>Summarise the data and identify the inputs for conducting the hypothesis testing and associated assumptions.</li>
+<li>Conduct hypothesis testing, evaluate the outcomes, interpret the results and draw valid conclusions.</li>
+<li>Explain and generalise the statistical concepts and implement in own area of research.</li>
+</ul>
+<p><br></p>
+</div>
+<div id="activity-12" class="section level2">
+<h2>Activity</h2>
+<p>Consider the following statements along with specific instruction given for each activity:</p>
+<ul>
+<li>Describe the steps of null hypotheses significance testing</li>
+<li>State null and alternative hypotheses</li>
+<li>Record the statistical significance level (Type 1 error) and probability tails</li>
+<li>Identify the appropriate test statistic</li>
+<li>Descriptive statistics of the observed sample data</li>
+<li>Explain the test statistic, p-value, quantile under type 1 error, 95% confidence interval</li>
+<li>Present the summary of the data, interpret the results and draw appropriate conclusions</li>
+<li>Evaluate the assumptions of the test</li>
+<li>Assess that the conclusion conforms with test statistic, p-value, quantile under type 1 error and 95% confidence interval</li>
+</ul>
+<p><br></p>
+<div id="activity-1-4" class="section level3">
+<h3>Activity 1</h3>
+<ul>
+<li>Accept all default values; click the ‘Update’ button ONCE.</li>
+<li>Note the t-statistic, p-value, mean difference, 95% CI of the mean difference.</li>
+<li>Do you expect these results given the TRUTH is known? Explain.</li>
+</ul>
+<p><br></p>
+</div>
+<div id="activity-2-4" class="section level3">
+<h3>Activity 2</h3>
+<ul>
+<li>Reload the app (click ‘Refresh’ or ‘Reload’ button in the browser).</li>
+<li>Accept all default values AND enter sample size for Group 2 = 15.</li>
+<li>Click the ‘Update’ button ONCE.</li>
+<li>Note the t-statistic, p-value, difference and 95% CI of difference.</li>
+<li>What are the interpretations? Do you expect these results?</li>
+</ul>
+<p><br></p>
+</div>
+<div id="activity-3-4" class="section level3">
+<h3>Activity 3</h3>
+<ul>
+<li>Reload the app (click ‘Refresh’ or ‘Reload’ button in the browser).</li>
+<li>Accept all default values; click the ‘Update’ button FIVE times.</li>
+<li>Note that the first update should produce the identical output as Activity 1.</li>
+<li>Note the t-statistic and p-value on each simulation (each click of Update button).</li>
+<li>Do you have different interpretations at each simulation stage? Can you explain the results?</li>
+<li>Do you have any instance when you cannot reject the null hypotheses? What could be the reasons?</li>
+</ul>
+<p><br></p>
+</div>
+<div id="activity-4-3" class="section level3">
+<h3>Activity 4</h3>
+<ul>
+<li>Reload the app (click ‘Refresh’ or ‘Reload’ button in the browser).</li>
+<li>Check the box to update instantly.</li>
+<li>Investigate the following scenarios and explain each instance:
+<ul>
+<li>Increase and decrease <span class="math inline">\(\mu_1\)</span> or <span class="math inline">\(\mu_2\)</span></li>
+<li>Increase and decrease <span class="math inline">\(\sigma\)</span></li>
+<li>Increase and decrease sample size</li>
+<li>Increase and decrease type 1 error</li>
+<li>Change the probability tail to lower/upper or both</li>
+</ul></li>
+<li>Explain and interpret the outcomes for each scenario.</li>
+<li>Do you have any instance when the outcomes are different from what you expect given the TRUTH is known?</li>
+<li>What could be the reasons?</li>
+<li>While explaining, keep in mind that ABACUS is simulating the data at each instance aligning with the Frequentist inferential framework. When in doubt, deselect ‘check the box to update instantly’ and click the ‘Update’ button multiple times and explore each outcome.</li>
+<li>Also, note that the statistical power of a test depends on other essential components. Can you explain these components based on your observations with different scenarios above?</li>
+</ul>
+<p><br></p>
+</div>
+<div id="activity-5-3" class="section level3">
+<h3>Activity 5</h3>
+<ul>
+<li>Reload the app (click ‘Refresh’ or ‘Reload’ button in the browser).</li>
+<li>Identify a variable from your subject area.</li>
+<li>Enter the true population means (equal as well as unequal) and true population standard deviation for the variable (based on literature or prior available data).</li>
+<li>Explore the sampling scenarios and explain the outcomes due to changes of <span class="math inline">\(\mu_0\)</span>, <span class="math inline">\(\sigma\)</span>, sample size, type 1 error and probability tail.</li>
+</ul>
+<p><br> <br></p>
+<hr />
+</div>
+</div>
+</div>
+<div id="hypothesis-testing-one-way-analysis-of-variance" class="section level1">
+<h1>Hypothesis Testing: One-way Analysis of Variance</h1>
+<hr />
+<p><br></p>
+<div id="intended-learning-outcomes-5" class="section level2">
+<h2>Intended Learning Outcomes</h2>
+<ul>
+<li>Describe the steps of null hypotheses significance testing.</li>
+<li>Test the null hypothesis that three independent groups of observations are sampled from the same population.</li>
+<li>Summarise the data and identify the inputs for conducting the hypothesis testing and associated assumptions.</li>
+<li>Conduct hypothesis testing, evaluate the outcomes, interpret the results and draw valid conclusions.</li>
+<li>Explain and generalise the statistical concepts and implement in own area of research.</li>
+</ul>
+<p><br></p>
+</div>
+<div id="activity-13" class="section level2">
+<h2>Activity</h2>
+<p>Consider the following statements along with specific instruction given for each activity:</p>
+<ul>
+<li>Describe the steps of null hypotheses significance testing.</li>
+<li>State null and alternative hypotheses.</li>
+<li>Record the statistical significance level (Type 1 error) and probability tails</li>
+<li>Identify the appropriate test statistic.</li>
+<li>Present the descriptive statistics of the observed sample data.</li>
+<li>Explain the test statistic, p-value, quantile under type 1 error and 95% confidence interval.</li>
+<li>Present the summary of the data, interpret the results and draw appropriate conclusions.</li>
+<li>Evaluate the assumptions of the test.</li>
+<li>Explain the changes in between and within sum of squares and mean squares due to changes in inputs.</li>
+<li>Assess that the conclusion conforms with test statistic, p-value, quantile under type 1 error and 95% confidence interval.</li>
+</ul>
+<p><br></p>
+<div id="activity-1-5" class="section level3">
+<h3>Activity 1</h3>
+<ul>
+<li>Accept all default values; click the ‘Update’ button ONCE.</li>
+<li>Note the sum of squares, mean squares, F-statistic, p-value, quantile, mean difference and 95% CI of difference.</li>
+<li>Do you expect these results given the TRUTH is known? Explain.</li>
+</ul>
+<p><br></p>
+</div>
+<div id="activity-2-5" class="section level3">
+<h3>Activity 2</h3>
+<ul>
+<li>Reload the app (click ‘Refresh’ or ‘Reload’ button in the browser).</li>
+<li>Accept all default values AND enter sample size for all groups = 10.</li>
+<li>Click the ‘Update’ button ONCE.</li>
+<li>Note the sum of squares, mean squares, F-statistic, p-value, quantile, mean difference and 95% CI of difference.</li>
+<li>What are the interpretations? Do you expect these results?</li>
+</ul>
+<p><br></p>
+</div>
+<div id="activity-3-5" class="section level3">
+<h3>Activity 3</h3>
+<ul>
+<li>Reload the app (click ‘Refresh’ or ‘Reload’ button in the browser).</li>
+<li>Accept all default values; click the ‘Update’ button FIVE times.</li>
+<li>Note that the first update should produce the identical output as Activity 1.</li>
+<li>Note the sum of squares, mean squares, F-statistic, p-value, quantile, mean difference and 95% CI of difference for each click of the ‘Update’ button.</li>
+<li>Do you have different interpretations at each simulation stage? Can you explain the results?</li>
+<li>Do you have any instance when you cannot reject the null hypotheses? What could be the reasons?</li>
+</ul>
+<p><br></p>
+</div>
+<div id="activity-4-4" class="section level3">
+<h3>Activity 4</h3>
+<ul>
+<li>Reload the app (click ‘Refresh’ or ‘Reload’ button in the browser)</li>
+<li>Check the box to update instantly</li>
+<li>Investigate the following scenarios and explain each instance:
+<ul>
+<li>Increase and decrease <span class="math inline">\(\mu_1\)</span> / <span class="math inline">\(\mu_2\)</span> / <span class="math inline">\(\mu_3\)</span></li>
+<li>Increase and decrease <span class="math inline">\(\sigma\)</span></li>
+<li>Increase and decrease sample size</li>
+<li>Increase and decrease type 1 error</li>
+<li>Change the probability tail to lower/upper or both</li>
+</ul></li>
+<li>Explain and interpret the outcomes for each scenario</li>
+<li>Do you have any instance when the outcomes are different from what you expect given the TRUTH is known?</li>
+<li>What could be the reasons?</li>
+<li>While explaining, keep in mind that ABACUS is simulating the data at each instance aligning with the Frequentist inferential framework. When in doubt, deselect ‘check the box to update instantly’ and click the ‘Update’ button multiple times and explore each outcome.</li>
+<li>Also, note that the statistical power of a test depends on other essential components. Can you explain these components based on your observations with different scenarios above?</li>
+</ul>
+<p><br></p>
+</div>
+<div id="activity-5-4" class="section level3">
+<h3>Activity 5</h3>
+<ul>
+<li>Reload the app (click ‘Refresh’ or ‘Reload’ button in the browser).</li>
+<li>Identify a variable from your subject area.</li>
+<li>Enter the true population means (equal as well as unequal) and true population standard deviation for the variable (based on literature or prior available data).</li>
+<li>Explore the sampling scenarios and explain the outcomes due to changes of <span class="math inline">\(\mu\)</span>, <span class="math inline">\(\sigma\)</span>, sample size, type 1 error and probability tail.</li>
+</ul>
+<p><br> <br></p>
+</div>
+</div>
+</div>
+
+<script type="text/javascript">
+window.onload = function() {
+  var i, fig = 1, caps = document.getElementsByClassName('caption');
+  for (i = 0; i < caps.length; i++) {
+    var cap = caps[i];
+    if (cap.parentElement.className !== 'figure' || cap.nodeName !== 'P')
+      continue;
+    cap.innerHTML = '<span>Figure ' + fig + ':</span> ' + cap.innerHTML;
+    fig++;
+  }
+  fig = 1;
+  caps = document.getElementsByTagName('caption');
+  for (i = 0; i < caps.length; i++) {
+    var cap = caps[i];
+    if (cap.parentElement.nodeName !== 'TABLE') continue;
+    cap.innerHTML = '<span>Table ' + fig + ':</span> ' + cap.innerHTML;
+    fig++;
+  }
+}
+</script>
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

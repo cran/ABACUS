@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="author" content="Mintu Nath" />
+
+<meta name="date" content="2019-09-12" />
+
+<title>Using ABACUS</title>
+
+
+
+
+
+
+<style type="text/css">body {
+background-color: #fff;
+margin: 1em auto;
+max-width: 800px;
+overflow: visible;
+padding-left: 2em;
+padding-right: 2em;
+font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 14px;
+line-height: 20px;
+}
+#header {
+text-align: center;
+}
+#TOC {
+clear: both;
+margin: 0 0 10px 0;
+padding: 4px;
+border: 1px solid #CCCCCC;
+border-radius: 5px;
+background-color: #f6f6f6;
+font-size: 13px;
+line-height: 1.3;
+}
+#TOC .toctitle {
+font-weight: bold;
+font-size: 15px;
+margin-left: 5px;
+}
+#TOC ul {
+padding-left: 40px;
+margin-left: -1.5em;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+#TOC ul ul {
+margin-left: -2em;
+}
+#TOC li {
+line-height: 16px;
+}
+table:not([class]) {
+margin: auto;
+min-width: 40%;
+border-width: 1px;
+border-color: #DDDDDD;
+border-style: outset;
+border-collapse: collapse;
+}
+table[summary="R argblock"] {
+width: 100%;
+border: none;
+}
+table:not([class]) th {
+border-width: 2px;
+padding: 5px;
+border-style: inset;
+}
+table:not([class]) td {
+border-width: 1px;
+border-style: inset;
+line-height: 18px;
+padding: 5px 5px;
+}
+table:not([class]), table:not([class]) th, table:not([class]) td {
+border-left-style: none;
+border-right-style: none;
+}
+table:not([class]) tr.odd {
+background-color: #f7f7f7;
+}
+p {
+margin: 0.5em 0;
+}
+blockquote {
+background-color: #f6f6f6;
+padding: 13px;
+padding-bottom: 1px;
+}
+hr {
+border-style: solid;
+border: none;
+border-top: 1px solid #777;
+margin: 28px 0;
+}
+dl {
+margin-left: 0;
+}
+dl dd {
+margin-bottom: 13px;
+margin-left: 13px;
+}
+dl dt {
+font-weight: bold;
+}
+ul {
+margin-top: 0;
+}
+ul li {
+list-style: circle outside;
+}
+ul ul {
+margin-bottom: 0;
+}
+pre, code {
+background-color: #f5f5f5;
+border-radius: 3px;
+color: #333;
+}
+pre {
+overflow-x: auto;
+border-radius: 3px;
+margin: 5px 0 10px 0;
+padding: 10px;
+}
+pre:not([class]) {
+background-color: white;
+border: #f5f5f5 1px solid;
+}
+pre:not([class]) code {
+color: #444;
+background-color: white;
+}
+code {
+font-family: monospace;
+font-size: 90%;
+}
+p > code, li > code {
+padding: 2px 4px;
+color: #d14;
+border: 1px solid #e1e1e8;
+white-space: inherit;
+}
+div.figure {
+text-align: center;
+}
+table > caption, div.figure p.caption {
+font-style: italic;
+}
+table > caption span, div.figure p.caption span {
+font-style: normal;
+font-weight: bold;
+}
+p {
+margin: 0 0 10px;
+}
+table:not([class]) {
+margin: auto auto 10px auto;
+}
+img:not([class]) {
+background-color: #FFFFFF;
+padding: 2px;
+border-radius: 3px;
+border: 1px solid #CCCCCC;
+margin: 0 5px;
+max-width: 100%;
+}
+h1 {
+margin-top: 0;
+font-size: 35px;
+line-height: 40px;
+}
+h2 {
+border-bottom: 4px solid #f5f5f5;
+padding-top: 10px;
+padding-bottom: 2px;
+font-size: 145%;
+}
+h3 {
+border-bottom: 2px solid #f5f5f5;
+padding-top: 10px;
+font-size: 120%;
+}
+h4 {
+border-bottom: 1px solid #f5f5f5;
+margin-left: 8px;
+font-size: 105%;
+}
+h5, h6 {
+border-bottom: 1px solid #ccc;
+font-size: 105%;
+}
+a {
+color: #0033dd;
+text-decoration: none;
+}
+a:hover {
+color: #6666ff; }
+a:visited {
+color: #800080; }
+a:visited:hover {
+color: #BB00BB; }
+a[href^="http:"] {
+text-decoration: underline; }
+a[href^="https:"] {
+text-decoration: underline; }
+div.r-help-page {
+background-color: #f9f9f9;
+border-bottom: #ddd 1px solid;
+margin-bottom: 10px;
+padding: 10px;
+}
+div.r-help-page:hover {
+background-color: #f4f4f4;
+}
+
+code > span.kw { color: #555; font-weight: bold; } 
+code > span.dt { color: #902000; } 
+code > span.dv { color: #40a070; } 
+code > span.bn { color: #d14; } 
+code > span.fl { color: #d14; } 
+code > span.ch { color: #d14; } 
+code > span.st { color: #d14; } 
+code > span.co { color: #888888; font-style: italic; } 
+code > span.ot { color: #007020; } 
+code > span.al { color: #ff0000; font-weight: bold; } 
+code > span.fu { color: #900; font-weight: bold; } 
+code > span.er { color: #a61717; background-color: #e3d2d2; } 
+</style>
+
+
+
+
+</head>
+
+<body>
+
+
+
+
+<h1 class="title toc-ignore">Using ABACUS</h1>
+<h3 class="subtitle">ABACUS: Apps Based Activities for Communicating and Understanding Statistics</h3>
+<h4 class="author">Mintu Nath</h4>
+<h4 class="date">2019-09-12</h4>
+
+
+<div id="TOC">
+<ul>
+<li><a href="#main-features">Main Features</a></li>
+<li><a href="#a-quick-start-guide-to-abacus">A Quick Start Guide to ABACUS</a><ul>
+<li><a href="#option-1-replicable-simulation-given-a-seed-value">Option 1: Replicable simulation given a seed value</a></li>
+<li><a href="#option-2-non-replicable-instant-simulation">Option 2: Non-replicable instant simulation</a></li>
+</ul></li>
+<li><a href="#inputs">INPUTS</a><ul>
+<li><a href="#simulation-features">Simulation Features</a><ul>
+<li><a href="#option-1-replicable-simulation-given-a-seed-value-1">Option 1: Replicable simulation given a seed value</a></li>
+<li><a href="#option-2-non-replicable-instant-simulation-1">Option 2: Non-replicable instant simulation</a></li>
+</ul></li>
+<li><a href="#app-specific-inputs">App-specific Inputs</a><ul>
+<li><a href="#normal-distribution">Normal Distribution</a></li>
+<li><a href="#sampling-distribution">Sampling Distribution</a></li>
+<li><a href="#hypothesis-testing-one-sample-z-test">Hypothesis Testing: One-Sample Z-Test</a></li>
+<li><a href="#hypothesis-testing-one-sample-students-t-test">Hypothesis Testing: One-Sample Student’s t-Test</a></li>
+<li><a href="#hypothesis-testing-two-sample-independent-unpaired-t-test">Hypothesis Testing: Two-Sample Independent (Unpaired) t-Test</a></li>
+<li><a href="#hypothesis-testing-one-way-analysis-of-variance">Hypothesis Testing: One-way Analysis of Variance</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#outputs">OUTPUTS</a><ul>
+<li><a href="#app-specific-outputs">App-specific Outputs</a><ul>
+<li><a href="#normal-distribution-1">Normal Distribution</a></li>
+<li><a href="#sampling-distribution-1">Sampling Distribution</a></li>
+<li><a href="#hypothesis-testing-one-sample-z-test-1">Hypothesis Testing: One-Sample Z-Test</a></li>
+<li><a href="#hypothesis-testing-one-sample-students-t-test-1">Hypothesis Testing: One-Sample Student’s t-Test</a></li>
+<li><a href="#hypothesis-testing-two-sample-independent-unpaired-t-test-1">Hypothesis Testing: Two-Sample Independent (Unpaired) t-Test</a></li>
+<li><a href="#hypothesis-testing-one-way-analysis-of-variance-1">Hypothesis Testing: One-way Analysis of Variance</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+
+<hr />
+<div id="main-features" class="section level1">
+<h1>Main Features</h1>
+<ul>
+<li>Narrative of statistical principles and theories in a simple, user-friendly and interactive interface</li>
+<li>Extensive use of simulation to capture statistical theories when the TRUTH is known</li>
+<li>Graphical representation of statistical concepts intertwined with the statistical outputs</li>
+<li>Captures frequentist view of the inferential framework</li>
+</ul>
+<hr />
+<p><br></p>
+</div>
+<div id="a-quick-start-guide-to-abacus" class="section level1">
+<h1>A Quick Start Guide to ABACUS</h1>
+<p>There are TWO options to explore ABACUS. A brief outline is given here. See the INPUTS and OUTPUTS sections for further details.</p>
+<div id="option-1-replicable-simulation-given-a-seed-value" class="section level2">
+<h2>Option 1: Replicable simulation given a seed value</h2>
+<ul>
+<li>Change the input values in the left panel</li>
+<li>Click the <strong>Update</strong> button</li>
+<li>Explore the outcomes in different tabs</li>
+</ul>
+<p>If you are using ABACUS for the first time, consider the default input values and just click the <strong>Update</strong> button. Explore the outcomes in different tabs.</p>
+</div>
+<div id="option-2-non-replicable-instant-simulation" class="section level2">
+<h2>Option 2: Non-replicable instant simulation</h2>
+<ul>
+<li>Select the option: <strong>Check the box to update instantly</strong></li>
+<li>Change the input values by editing the input box or moving the points in the slider bar</li>
+<li>The app will react to these changes</li>
+<li>Explore the outcomes in different tabs</li>
+</ul>
+<p><br></p>
+</div>
+</div>
+<div id="inputs" class="section level1">
+<h1>INPUTS</h1>
+<p>Here is a quick guideline on how to use the apps effectively. Different apps may need different types of inputs and display different outputs, but the general framework remains the same.</p>
+<p>The options to provide INPUT values are on the left panel of the apps. All inputs are set at appropriate default values, but one can change the input values if needed.</p>
+<p>The required INPUT values will depend on the specific app. These may include:</p>
+<ul>
+<li><strong>Population Parameters</strong></li>
+<li><strong>Sample Characteristics</strong></li>
+<li><strong>Distribution Function</strong></li>
+<li><strong>Simulation Features</strong></li>
+</ul>
+<p>To use the app at first instance, accept the default INPUT values and click the <strong>Update</strong> button. The app will produce the outcomes in different tabs. Explore the outcomes to understand the apps in the first instance.</p>
+<p>To alter the input values, provide the inputs for the <strong>Population Parameters</strong> (for example, <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma\)</span>) in the text box and alter the other input values by moving the slider bar within the given range. Depending on the <strong>Simulation Feature</strong> option, the outputs in different tabs will change with altered inputs.</p>
+<p>To fine-tune the INPUT values in the slider to the required value, you may select and drag the point nearer the desired value and then press left or right arrow keys to fine-tune.</p>
+<p><br></p>
+<div id="simulation-features" class="section level2">
+<h2>Simulation Features</h2>
+<p>There are two options to run repeated random sampling:</p>
+<p><br></p>
+<div id="option-1-replicable-simulation-given-a-seed-value-1" class="section level3">
+<h3>Option 1: Replicable simulation given a seed value</h3>
+<p>When you press the <strong>Update</strong> button the first time, it will draw a random sample based on the INPUT values. The random sample will be drawn given the <strong>seed value</strong> included in the text box for seed value (default is given as 12345).</p>
+<p>In the next step, you may wish to alter the inputs again OR keep the inputs unaltered and press the <strong>Update</strong> button again. This will conduct a second random sampling conditional on the given INPUT values.</p>
+<p>For example, reload the app for Normal distribution. Keep all the INPUT values at its default values including the seed value as 12345. Click the <strong>Update</strong> button THREE times. Note the Sample Mean and SD displayed in the plot on the right (see the app). Three successive values displayed should be as follows:</p>
+<ul>
+<li>On the first click of ‘Update’: <span class="math inline">\(\bar{x} = 20.07\)</span>, <span class="math inline">\(s = 4.55\)</span></li>
+<li>On the second click of ‘Update’: <span class="math inline">\(\bar{x} = 18.13\)</span>, <span class="math inline">\(s = 3.88\)</span></li>
+<li>on the third click of ‘Update’: <span class="math inline">\(\bar{x} = 19.43\)</span>, <span class="math inline">\(s = 4.09\)</span></li>
+</ul>
+<p>Since we generated the sample from a pre-specified seed value (here 12345, but you can change it to any value), these outcomes are replicable. That means if you reload the app and do it again, you will get the identical three values of <span class="math inline">\(\bar{x}\)</span> and <span class="math inline">\(s\)</span> of the sample in successive three clicks. In other words, if you and your friend run the app together with the identical seed value and other input values, both will get identical estimates.</p>
+<p><br></p>
+</div>
+<div id="option-2-non-replicable-instant-simulation-1" class="section level3">
+<h3>Option 2: Non-replicable instant simulation</h3>
+<p>If you wish to explore many scenarios and do not necessarily wish to replicate your outputs, then select the option: <strong>Check the box to update instantly</strong>. The important difference here is that you cannot obtain multiple outcomes for the same input values as in Option 1. You have to change the input values (at least a minor change) to trigger the app to sample data again. In other words, the app in this option only ‘reacts’ when you change the INPUT values. Also, note that the <strong>Update</strong> button <em>will not respond</em> in this option and the random sampling will not be conducted using the seed value (as in Option 1). In Option 2, the seed value is instantly set based on the current time and process id, therefore, outputs are not replicable.</p>
+<p><br></p>
+</div>
+</div>
+<div id="app-specific-inputs" class="section level2">
+<h2>App-specific Inputs</h2>
+<div id="normal-distribution" class="section level3">
+<h3>Normal Distribution</h3>
+<ul>
+<li>Simulation Features
+<ul>
+<li>Check the box to update instantly</li>
+<li>Update</li>
+<li>Seed value for generating the random number</li>
+</ul></li>
+<li>Population Parameters
+<ul>
+<li>True Population Mean: <span class="math inline">\(\mu\)</span></li>
+<li>True Population Standard Deviation: <span class="math inline">\(\sigma\)</span></li>
+<li>X-axis scale for the center and scale effect</li>
+</ul></li>
+<li>Sample Characteristics
+<ul>
+<li>Sample: Number of observations</li>
+<li>Number of bins</li>
+<li>Plot type: Frequency Distribution; Overlay Normal Density</li>
+</ul></li>
+<li>Distribution Function
+<ul>
+<li>Cumulative probability</li>
+<li>Probability Tail</li>
+</ul></li>
+</ul>
+</div>
+<div id="sampling-distribution" class="section level3">
+<h3>Sampling Distribution</h3>
+<ul>
+<li>Simulation Features
+<ul>
+<li>Check the box to update instantly</li>
+<li>Update</li>
+<li>Seed value for generating the random number</li>
+</ul></li>
+<li>Population Parameters
+<ul>
+<li>True Population Mean: <span class="math inline">\(\mu\)</span></li>
+<li>True Population Standard Deviation: <span class="math inline">\(\sigma\)</span></li>
+</ul></li>
+<li>Sample Characteristics
+<ul>
+<li>Sample size</li>
+</ul></li>
+</ul>
+</div>
+<div id="hypothesis-testing-one-sample-z-test" class="section level3">
+<h3>Hypothesis Testing: One-Sample Z-Test</h3>
+<ul>
+<li>Simulation Features
+<ul>
+<li>Check the box to update instantly</li>
+<li>Update</li>
+<li>Seed value for generating the random number</li>
+</ul></li>
+<li>Population Parameters
+<ul>
+<li>True Population Mean: <span class="math inline">\(\mu\)</span></li>
+<li>Hypothesised Population Mean: <span class="math inline">\(\mu_0\)</span></li>
+<li>True Population Standard Deviation: <span class="math inline">\(\sigma\)</span></li>
+</ul></li>
+<li>Sample Characteristics
+<ul>
+<li>Sample size</li>
+</ul></li>
+<li>Distribution Function
+<ul>
+<li>Type 1 Error</li>
+<li>Probability Tail: Lower tail; Upper tail; Both tails</li>
+</ul></li>
+</ul>
+</div>
+<div id="hypothesis-testing-one-sample-students-t-test" class="section level3">
+<h3>Hypothesis Testing: One-Sample Student’s t-Test</h3>
+<ul>
+<li>Simulation Features
+<ul>
+<li>Check the box to update instantly</li>
+<li>Update</li>
+<li>Seed value for generating the random number</li>
+</ul></li>
+<li>Population Parameters
+<ul>
+<li>True Population Mean: <span class="math inline">\(\mu\)</span></li>
+<li>Hypothesised Population Mean: <span class="math inline">\(\mu_0\)</span></li>
+<li>True Population Standard Deviation: <span class="math inline">\(\sigma\)</span></li>
+</ul></li>
+<li>Sample Characteristics
+<ul>
+<li>Sample size</li>
+</ul></li>
+<li>Distribution Function
+<ul>
+<li>Type 1 Error</li>
+<li>Probability Tail: Lower tail; Upper tail; Both tails</li>
+</ul></li>
+</ul>
+</div>
+<div id="hypothesis-testing-two-sample-independent-unpaired-t-test" class="section level3">
+<h3>Hypothesis Testing: Two-Sample Independent (Unpaired) t-Test</h3>
+<ul>
+<li>Simulation Features
+<ul>
+<li>Check the box to update instantly</li>
+<li>Update</li>
+<li>Seed value for generating the random number</li>
+</ul></li>
+<li>Population Parameters
+<ul>
+<li>True Population 1 Mean: <span class="math inline">\(\mu_1\)</span></li>
+<li>True Population 2 Mean: <span class="math inline">\(\mu_2\)</span></li>
+<li>True Population Standard Deviation: <span class="math inline">\(\sigma\)</span></li>
+</ul></li>
+<li>Sample Characteristics
+<ul>
+<li>Sample 1 (Group 1) Size: <span class="math inline">\(n_1\)</span></li>
+<li>Sample 2 (Group 2) Size: <span class="math inline">\(n_2\)</span></li>
+</ul></li>
+<li>Distribution Function
+<ul>
+<li>Type 1 Error</li>
+<li>Probability Tail: Lower (Left) tail; Upper (Right) tail; Both (Two) tails</li>
+</ul></li>
+</ul>
+</div>
+<div id="hypothesis-testing-one-way-analysis-of-variance" class="section level3">
+<h3>Hypothesis Testing: One-way Analysis of Variance</h3>
+<ul>
+<li>Population Parameters
+<ul>
+<li>True Population 1 Mean: <span class="math inline">\(\mu_1\)</span></li>
+<li>True Population 2 Mean: <span class="math inline">\(\mu_2\)</span></li>
+<li>True Population 3 Mean: <span class="math inline">\(\mu_3\)</span></li>
+<li>True Population Standard Deviation: <span class="math inline">\(\sigma\)</span></li>
+</ul></li>
+<li>Sample Characteristics
+<ul>
+<li>Sample 1 (Group 1) Size: <span class="math inline">\(n_1\)</span></li>
+<li>Sample 2 (Group 2) Size: <span class="math inline">\(n_2\)</span></li>
+<li>Sample 3 (Group 3) Size: <span class="math inline">\(n_3\)</span></li>
+</ul></li>
+<li>Distribution Function
+<ul>
+<li>Type 1 Error</li>
+<li>Probability Tail: Lower (Left) tail; Upper (Right) tail; Both (Two) tails</li>
+</ul></li>
+<li>Simulation Features
+<ul>
+<li>Check the box to update instantly</li>
+<li>Update</li>
+<li>Seed value for generating the random number</li>
+</ul></li>
+</ul>
+<p><br> <br></p>
+</div>
+</div>
+</div>
+<div id="outputs" class="section level1">
+<h1>OUTPUTS</h1>
+<p>The outcomes are presented in several tabs depending on the app.</p>
+<div id="app-specific-outputs" class="section level2">
+<h2>App-specific Outputs</h2>
+<div id="normal-distribution-1" class="section level3">
+<h3>Normal Distribution</h3>
+<ul>
+<li>Sample</li>
+<li>Distribution</li>
+<li>Probability &amp; Quantile</li>
+</ul>
+</div>
+<div id="sampling-distribution-1" class="section level3">
+<h3>Sampling Distribution</h3>
+<ul>
+<li>Population &amp; Sample</li>
+<li>Sample</li>
+<li>Sample Estimators</li>
+<li>Confidence Interval</li>
+<li>Summary</li>
+</ul>
+</div>
+<div id="hypothesis-testing-one-sample-z-test-1" class="section level3">
+<h3>Hypothesis Testing: One-Sample Z-Test</h3>
+<ul>
+<li>Population</li>
+<li>Sample</li>
+<li>Test Statistic</li>
+<li>Summary</li>
+</ul>
+</div>
+<div id="hypothesis-testing-one-sample-students-t-test-1" class="section level3">
+<h3>Hypothesis Testing: One-Sample Student’s t-Test</h3>
+<ul>
+<li>Population</li>
+<li>Sample</li>
+<li>Test Statistic</li>
+<li>Summary</li>
+</ul>
+</div>
+<div id="hypothesis-testing-two-sample-independent-unpaired-t-test-1" class="section level3">
+<h3>Hypothesis Testing: Two-Sample Independent (Unpaired) t-Test</h3>
+<ul>
+<li>Population</li>
+<li>Sample</li>
+<li>Test Statistic</li>
+<li>Summary</li>
+</ul>
+</div>
+<div id="hypothesis-testing-one-way-analysis-of-variance-1" class="section level3">
+<h3>Hypothesis Testing: One-way Analysis of Variance</h3>
+<ul>
+<li>Population</li>
+<li>Sample</li>
+<li>SS &amp; MS (Sum of Squares &amp; Mean Squares)</li>
+<li>Test Statistic</li>
+<li>Summary</li>
+</ul>
+<p><br></p>
+<p><br></p>
+</div>
+</div>
+</div>
+
+<script type="text/javascript">
+window.onload = function() {
+  var i, fig = 1, caps = document.getElementsByClassName('caption');
+  for (i = 0; i < caps.length; i++) {
+    var cap = caps[i];
+    if (cap.parentElement.className !== 'figure' || cap.nodeName !== 'P')
+      continue;
+    cap.innerHTML = '<span>Figure ' + fig + ':</span> ' + cap.innerHTML;
+    fig++;
+  }
+  fig = 1;
+  caps = document.getElementsByTagName('caption');
+  for (i = 0; i < caps.length; i++) {
+    var cap = caps[i];
+    if (cap.parentElement.nodeName !== 'TABLE') continue;
+    cap.innerHTML = '<span>Table ' + fig + ':</span> ' + cap.innerHTML;
+    fig++;
+  }
+}
+</script>
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

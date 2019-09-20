@@ -1,0 +1,70 @@
+#' Shiny App to Explore Properties of the Normal Distribution
+#'
+#' @name shiny_dnorm
+#' @aliases shiny_dnorm
+#' @description An interactive Shiny app to demonstrate properties of the Normal distribution.
+#' @usage shiny_dnorm()
+#'
+#' @details The interactive Shiny app demonstrates the properties of Normal distribution.
+#'     The app considers parameters (mean and standard deviation) of the Normal distribution and captures its
+#'     properties using different graphical outputs.
+#'     The user changes the population parameter values, sample characteristics, distribution function and
+#'     simulation features and explores the influence of these changes on the hypothesis testing.
+#'
+#'     The left panel includes the user inputs for \strong{Simulation Features}, \strong{Population Parameters},
+#'     \strong{Sample Characteristics}, and \strong{Distribution Function}.
+#'     To use the app at first instance, just click the \code{Update} button.
+#'     To alter the input values, edit the text box or move the point on the slider and
+#'     explore the changes in different tabs (see below).
+#'
+#'     To obtain identical outcomes in a separate run of the app,
+#'     set a common seed value at the bottom of the left panel and click \code{Update}.
+#'     All subsequent updates will produce identical results provided other inputs are identical.
+#'     The seed value is ignored when the option \code{check the box to update instantly} is selected.
+#'
+#' @return The outcomes are presented in several tabs.
+#'     \item{Sample}{contains the histogram of sampling units randomly drawn from the given population.
+#'     Increasing the sample size and the number of bins creates the shape of the Normal distribution.
+#'     It also creates the normal density plot based on empirical data and
+#'     theoretical normal distribution given the parameter values}
+#'     \item{Distribution}{contains the plot for the probability density function of the Normal distribution
+#'     with given parameter values.
+#'     The user can also explore centring and scaling effect on the probability density function.}
+#'     \item{Probability & Quantile}{contains the plots for the probability density function and
+#'     cumulative probability density function. The user can explore the relationship between the
+#'     cumulative probability and quantile corresponding to tails of the distribution.}
+#'
+#' @seealso Function in base R for normal distribution including
+#'          \code{\link{dnorm}}, \code{\link{pnorm}}, \code{\link{qnorm}}, \code{\link{rnorm}}.
+#'
+#' @note \url{https://shiny.abdn.ac.uk/Stats/apps/}
+#'
+#' @author Mintu Nath
+#'
+#' @seealso Function in base R for normal distribution, including
+#'          \code{\link{dnorm}}, \code{\link{pnorm}},
+#'          \code{\link{qnorm}}, \code{\link{rnorm}}
+#'
+#' @examples
+#' if(interactive()){
+#'     library(ggplot2)
+#'     library(shiny)
+#'     library(ABACUS)
+#'     # Run shiny app
+#'     shiny_dnorm()
+#' }
+#'
+#' @import shiny
+#' @import ggplot2
+#' @export
+
+
+# Function
+
+shiny_dnorm <- function() {
+
+  shiny::runApp(appDir = system.file("app_dnorm", package = "ABACUS"), launch.browser = TRUE)
+  Sys.setenv("shiny_dnorm" = "")
+
+}
+

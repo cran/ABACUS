@@ -1,0 +1,274 @@
+---
+title: "Using ABACUS"
+subtitle: "ABACUS: Apps Based Activities for Communicating and Understanding Statistics"
+author: "Mintu Nath"
+date: "`r Sys.Date()`"
+vignette: >
+  %\VignetteIndexEntry{ABACUS Introduction}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+output:
+  knitr:::html_vignette:
+    toc: yes
+---
+
+
+----------------------------------
+
+# Main Features
+
+- Narrative of statistical principles and theories in a simple, user-friendly and interactive interface
+- Extensive use of simulation to capture statistical theories when the TRUTH is known
+- Graphical representation of statistical concepts intertwined with the statistical outputs
+- Captures frequentist view of the inferential framework
+
+----------------------------------
+
+<br>
+
+
+# A Quick Start Guide to ABACUS
+
+There are TWO options to explore ABACUS. A brief outline is given here. See the INPUTS and OUTPUTS sections for further details.
+
+## Option 1: Replicable simulation given a seed value 
+
+- Change the input values in the left panel
+- Click the **Update** button 
+- Explore the outcomes in different tabs
+
+If you are using ABACUS for the first time, consider the default input values and just click the **Update** button. Explore the outcomes in different tabs. 
+
+## Option 2: Non-replicable instant simulation
+
+- Select the option: **Check the box to update instantly**
+- Change the input values by editing the input box or moving the points in the slider bar
+- The app will react to these changes 
+- Explore the outcomes in different tabs
+
+
+<br>
+
+
+# INPUTS
+
+Here is a quick guideline on how to use the apps effectively. Different apps may need different types of inputs and display different outputs, but the general framework remains the same.
+
+The options to provide INPUT values are on the left panel of the apps. All inputs are set at appropriate default values, but one can change the input values if needed.
+
+The required INPUT values will depend on the specific app. These may include:
+
+- **Population Parameters**
+- **Sample Characteristics**
+- **Distribution Function**
+- **Simulation Features**
+
+To use the app at first instance, accept the default INPUT values and click the **Update** button. The app will produce the outcomes in different tabs. Explore the outcomes to understand the apps in the first instance.
+
+To alter the input values, provide the inputs for the **Population Parameters** (for example, $\mu$ and $\sigma$) in the text box and alter the other input values by moving the slider bar within the given range. Depending on the **Simulation Feature** option, the outputs in different tabs will change with altered inputs. 
+
+To fine-tune the INPUT values in the slider to the required value, you may select and drag the point nearer the desired value and then press left or right arrow keys to fine-tune.
+
+<br>
+
+## Simulation Features
+
+There are two options to run repeated random sampling:
+
+<br>
+
+### Option 1: Replicable simulation given a seed value 
+
+When you press the **Update** button the first time, it will draw a random sample based on the INPUT values. The random sample will be drawn given the **seed value** included in the text box for seed value (default is given as 12345). 
+
+In the next step, you may wish to alter the inputs again OR keep the inputs unaltered and press the **Update** button again. This will conduct a second random sampling conditional on the given INPUT values.
+
+For example, reload the app for Normal distribution. Keep all the INPUT values at its default values including the seed value as 12345. Click the **Update** button THREE times. Note the Sample Mean and SD displayed in the plot on the right (see the app). Three successive values displayed should be as follows: 
+
+- On the first click of 'Update': $\bar{x} = 20.07$, $s = 4.55$
+- On the second click of 'Update': $\bar{x} = 18.13$, $s = 3.88$
+- on the third click of 'Update': $\bar{x} = 19.43$, $s = 4.09$
+
+Since we generated the sample from a pre-specified seed value (here 12345, but you can change it to any value), these outcomes are replicable. That means if you reload the app and do it again, you will get the identical three values of $\bar{x}$ and $s$ of the sample in successive three clicks. In other words, if you and your friend run the app together with the identical seed value and other input values, both will get identical estimates.
+
+<br>
+
+
+### Option 2: Non-replicable instant simulation
+
+If you wish to explore many scenarios and do not necessarily wish to replicate your outputs, then select the option: **Check the box to update instantly**. The important difference here is that you cannot obtain multiple outcomes for the same input values as in Option 1. You have to change the input values (at least a minor change) to trigger the app to sample data again. In other words, the app in this option only 'reacts' when you change the INPUT values. Also, note that the **Update** button _will not respond_ in this option and the random sampling will not be conducted using the seed value (as in Option 1). In Option 2, the seed value is instantly set based on the current time and process id, therefore, outputs are not replicable.
+
+
+<br>
+
+
+## App-specific Inputs
+
+### Normal Distribution
+
+- Simulation Features
+  - Check the box to update instantly
+  - Update
+  - Seed value for generating the random number
+- Population Parameters
+  - True Population Mean: $\mu$
+  - True Population Standard Deviation: $\sigma$
+  - X-axis scale for the center and scale effect
+- Sample Characteristics
+  - Sample: Number of observations
+  - Number of bins
+  - Plot type: Frequency Distribution; Overlay Normal Density
+- Distribution Function
+  - Cumulative probability
+  - Probability Tail
+
+
+### Sampling Distribution
+
+- Simulation Features
+  - Check the box to update instantly
+  - Update
+  - Seed value for generating the random number
+- Population Parameters
+  - True Population Mean: $\mu$
+  - True Population Standard Deviation: $\sigma$
+- Sample Characteristics
+  - Sample size
+
+
+### Hypothesis Testing: One-Sample Z-Test
+
+- Simulation Features
+  - Check the box to update instantly
+  - Update
+  - Seed value for generating the random number
+- Population Parameters
+  - True Population Mean: $\mu$
+  - Hypothesised Population Mean: $\mu_0$ 
+  - True Population Standard Deviation: $\sigma$
+- Sample Characteristics
+  - Sample size
+- Distribution Function
+  - Type 1 Error
+  - Probability Tail: Lower tail; Upper tail; Both tails
+
+### Hypothesis Testing: One-Sample Student's t-Test
+
+- Simulation Features
+  - Check the box to update instantly
+  - Update
+  - Seed value for generating the random number
+- Population Parameters
+  - True Population Mean: $\mu$
+  - Hypothesised Population Mean: $\mu_0$ 
+  - True Population Standard Deviation: $\sigma$
+- Sample Characteristics
+  - Sample size
+- Distribution Function
+  - Type 1 Error
+  - Probability Tail: Lower tail; Upper tail; Both tails
+
+### Hypothesis Testing: Two-Sample Independent (Unpaired) t-Test
+
+- Simulation Features
+  - Check the box to update instantly
+  - Update
+  - Seed value for generating the random number
+- Population Parameters
+  - True Population 1 Mean: $\mu_1$
+  - True Population 2 Mean: $\mu_2$
+  - True Population Standard Deviation: $\sigma$
+- Sample Characteristics
+  - Sample 1 (Group 1) Size: $n_1$
+  - Sample 2 (Group 2) Size: $n_2$
+- Distribution Function
+  - Type 1 Error
+  - Probability Tail: Lower (Left) tail; Upper (Right) tail; Both (Two) tails
+
+
+### Hypothesis Testing: One-way Analysis of Variance
+
+- Population Parameters
+  - True Population 1 Mean: $\mu_1$
+  - True Population 2 Mean: $\mu_2$
+  - True Population 3 Mean: $\mu_3$
+  - True Population Standard Deviation: $\sigma$
+- Sample Characteristics
+  - Sample 1 (Group 1) Size: $n_1$
+  - Sample 2 (Group 2) Size: $n_2$
+  - Sample 3 (Group 3) Size: $n_3$
+- Distribution Function
+  - Type 1 Error
+  - Probability Tail: Lower (Left) tail; Upper (Right) tail; Both (Two) tails
+- Simulation Features
+  - Check the box to update instantly
+  - Update
+  - Seed value for generating the random number
+
+
+<br>
+<br>
+
+
+# OUTPUTS
+
+The outcomes are presented in several tabs depending on the app.
+
+
+## App-specific Outputs
+
+### Normal Distribution
+
+- Sample
+- Distribution
+- Probability & Quantile
+
+
+### Sampling Distribution
+
+- Population & Sample
+- Sample
+- Sample Estimators
+- Confidence Interval
+- Summary
+
+
+### Hypothesis Testing: One-Sample Z-Test
+
+- Population
+- Sample
+- Test Statistic
+- Summary
+
+
+### Hypothesis Testing: One-Sample Student's t-Test
+
+- Population
+- Sample
+- Test Statistic
+- Summary
+
+
+### Hypothesis Testing: Two-Sample Independent (Unpaired) t-Test
+
+- Population
+- Sample
+- Test Statistic
+- Summary
+
+
+### Hypothesis Testing: One-way Analysis of Variance
+
+- Population
+- Sample
+- SS & MS (Sum of Squares & Mean Squares)
+- Test Statistic
+- Summary
+
+
+
+<br>
+
+<br>
+
+

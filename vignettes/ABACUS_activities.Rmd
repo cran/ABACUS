@@ -1,0 +1,637 @@
+---
+title: "ABACUS Activities"
+subtitle: "ABACUS: Apps Based Activities for Communicating and Understanding Statistics"
+author: "Mintu Nath"
+date: "`r Sys.Date()`"
+vignette: >
+  %\VignetteIndexEntry{ABACUS Activities}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+output:
+  knitr:::html_vignette:
+    toc: yes
+    toc_depth: 2
+---
+
+
+----------------------------------
+
+# ABACUS
+
+----------------------------------
+
+The basic premise of ABACUS is to explore, understand and assess the concepts and theories of simple statistical techniques and tools using simulation and graphics when the TRUTH is known. It creates an environment to communicate and understand the Statistical concepts to a wider audience without complex mathematical derivation or elaborate programming. The ABACUS uses two techniques to convey the concepts: it implements the power of statistical simulation to simulate data under wide-ranging sampling scenarios, and secondly, it uses graphical interfaces to visualise the statistical concepts.
+
+In the following sections, a list of Activities is suggested. Teachers can implement and integrate these activities with the current lectures and practical classes. Please send your suggestions and ideas for further improvement of these activities.
+
+
+<br>
+<br>
+
+----------------------------------
+
+# Normal Distribution
+
+----------------------------------
+
+<br>
+
+## Intended Learning Outcomes
+
+- Explain the probability density function and cumulative distribution function of Normal distribution and Standard normal distribution.
+- Understand and create a histogram using different bin size and identify the shape of the Normal distribution.
+- Demonstrate the concept and effect of centring and scaling of a variable.
+- Describe properties of Normal distribution and Standard normal distribution.
+- Describe the concepts of cumulative probability, probability tail and quantile and the relationship between these terms.
+- Recognise the concept of statistical simulation and the importance of seed value in a computer simulation.
+- Explain and generalise the statistical concepts and implement in your area of research.
+
+<br>
+
+## Activity
+
+For each of the following activity:
+
+- Describe the problem
+- Identify the assumptions (if any)
+- Outline the successive steps of calculation supported by appropriate formulae
+- Conduct the apps-based experiment
+- Summarise the outputs
+- Interpret the results 
+- Draw valid conclusions
+- Generalise the problem in your research area
+
+
+<br>
+
+### Activity 1
+
+- Select the checkbox against "Check the box to update instantly".
+- Select the tab "Sample" and note the shape of the sample data,
+- Increase the sample size to >1000; describe the change of shape of the distribution.
+- Increase the sample size further and describe the shape.
+- Change the number of bins to >300. Explain the shape.
+- Overlay the data with Normal density function by selecting the appropriate option.
+
+<br>
+
+### Activity 2
+
+- Reload the app (click 'Refresh' or 'Reload' button in the browser).
+- Select the checkbox against "Check the box to update instantly".
+- Select the tab "Distribution".
+- Increase or decrease the value of $\mu$; this is analogous to centring effect.
+- Increase or decrease the value of $\sigma$; this is analogous to scale effect.
+- Explain the Probability Density function due to the centring and scaling of the data.
+
+<br>
+
+### Activity 3
+
+- Reload the app (click 'Refresh' or 'Reload' button in the browser).
+- Select the checkbox against "Check the box to update instantly".
+- Select the tab "Probability and Quantile".
+- Change the point on the slider of 'Cumulative probability'.
+- Select different options for the probability tails.
+- Describe the concepts of cumulative probability, probability tail and quantile and the relationship between these terms.
+
+<br>
+
+### Activity 4
+
+- Reload the app (click 'Refresh' or 'Reload' button in the browser).
+- Select the checkbox against "Check the box to update instantly".
+- Select the tab "Probability and Quantile".
+- Using the plots for probability density function and cumulative density function as well as the input values, prove that for a Normal distribution: Mean = Median = Mode.
+- Explain that Normal distribution is unimodal and symmetric around the point $x = \mu$.
+
+<br>
+
+### Activity 5
+
+- Reload the app (click 'Refresh' or 'Reload' button in the browser).
+- Select the checkbox against "Check the box to update instantly".
+- Select the tab "Probability and Quantile".
+- Given that the variable follows a Normal distribution with the population parameters as $\mu = 20$ and $\sigma = 4$, find out the following:
+  - The minimum value of top 5%, 10%, 20%, 50% of the population
+  - The maximum value of bottom 5%, 10%, 20%, 50% of the population
+  - The minimum value of top 97.5% of the population
+  - The maximum value of the bottom 2.5% of the population
+  
+Note: To fine-tune the point on the slider, move the slider nearer the value and then use left or right keys to fine-tune it.
+
+<br>
+
+### Activity 6
+
+- Reload the app (click 'Refresh' or 'Reload' button in the browser).
+- Select the checkbox against "Check the box to update instantly".
+- Select the tab "Probability and Quantile".
+- Given that the variable follows a Normal distribution with the population parameters as $\mu = 20$ and $\sigma = 4$, find out the following:
+  - What proportion of the population is greater than 26.58?
+  - What proportion of the population is less than 26.58?
+  - What proportion of the population is greater than 13.42?
+  - What proportion of the population is greater than 13.42?
+  - What proportion of the population is between 12.16 and 27.84?
+- Explain the area under the curve.
+- What is the total probability under the Normal distribution curve and over the x-axis?
+  
+Note: To fine-tune the point on the slider, move the slider nearer the value and then use left or right keys to fine-tune it.
+
+<br>
+
+### Activity 7
+
+- Reload the app (click 'Refresh' or 'Reload' button in the browser).
+- Select the checkbox against "Check the box to update instantly".
+- Select the tab "Probability and Quantile".
+- Create the probability density function and cumulative density function of the Standard Normal distribution.
+- Given that the variable ($z$) follows a Standard Normal distribution, find out the following:
+- The value of $z$ with the lower-tail cumulative probability of 0.05
+- The value of $z$ with the upper-tail cumulative probability of 0.05
+- The value of $z$ with the lower-tail cumulative probability of 0.95
+- The value of $z$ with the upper-tail cumulative probability of 0.95
+- The value of $z$ with the upper-tail cumulative probability of 0.50
+- The value of $z$ with the two-tailed cumulative probability of 0.05
+- The value of $z$ with the two-tailed cumulative probability of 0.01
+  
+Note: To fine-tune the point on the slider, move the slider nearer the value and then use left or right keys to fine-tune it.
+
+<br>
+
+### Activity 8
+
+- Reload the app (click 'Refresh' or 'Reload' button in the browser).
+- Identify a variable from your subject area that follows Normal distribution.
+- Enter the true population mean and true population standard deviation for the variable (based on literature or prior available data).
+- Explore sample characteristics and distribution functions; explain the outcomes and associated plots.
+- Go to the 'Sample' tab.
+- Press 'Update' button multiple times and explore the random sampling scenarios.
+- Explain the concept of statistical simulation and the importance of seed value.
+
+
+<br>
+<br>
+
+
+
+----------------------------------
+
+# Sampling Distributions
+
+----------------------------------
+
+<br>
+
+## Intended Learning Outcomes
+
+- Describe the concept of random sampling and sampling units.
+- Recognise the concept of parameters and estimates.
+- Demonstrate and generalise the distribution of sample means.
+- Summarise the expected value of the sample mean and sample standard deviation.
+- Interpret standard error of a sample mean and its importance in the context of random sampling.
+- Construct the confidence interval and appraise the concept relevant to sampling.
+- Describe the concepts of cumulative probability, probability tail and quantile and the relationship between them.
+- Explain and generalise the statistical theory underlying sampling distribution and implement in own area of research. 
+
+<br>
+
+## Activity
+
+For each of the following activity:
+
+- Describe the problem
+- Identify the assumptions (if any)
+- Outline the successive steps of calculation supported by appropriate formulae
+- Conduct the apps-based experiment
+- Summarise the outputs
+- Interpret the results 
+- Draw valid conclusions
+- Generalise the problem in your research area
+
+
+<br>
+
+### Activity 1
+
+- Load the app
+- Select the checkbox against "Check the box to update instantly".
+- Select the tab "Sample". Note the spread of the sampled data as well as the mean and sd of each sample.
+- Increase the sample size to >200. Describe how the spread of the sampled data is changing.
+- Select the tab "Sample Estimator". Note the mean of sample means, mean of sample standard deviations (SD).
+- Explain the meaning of the expected value of sample means and sample standard deviations (SD).
+- Note the standard deviation of sample means. What does it signify?
+- What is the standard error of the sample mean?
+- What is the distribution of the sample mean?
+- Select the tab "Confidence Interval"; explain the concept of a 95% confidence interval.
+- Explain the concept of sampling distribution under the Frequentist inferential framework.
+
+<br>
+
+### Activity 2
+
+- Reload the app (click 'Refresh' or 'Reload' button in the browser).
+- Select the checkbox against "Check the box to update instantly".
+- Investigate the effect of altering the following input values on the standard error of mean and 95% confidence interval of mean:
+  - Increase and decrease $\mu$
+  - Increase and decrease $\sigma$
+  - Increase and decrease sample size
+- Explore the 'central limit theorem' and explain how the theorem generalises to the theory of sampling distribution.
+
+<br>
+
+### Activity 3
+
+- Reload the app (click 'Refresh' or 'Reload' button in the browser).
+- Identify a variable from your subject area that follows the Normal distribution.
+- Enter the true population mean and true population standard deviation for the variable (based on literature or prior available data).
+- Explore sample characteristics and distribution functions; explain the outcomes and associated plots in the context of the sampling distribution.
+- Illustrate your results and identify how different sample characteristics may affect your experiment.
+- Explain the concept of statistical simulation and the importance of seed value.
+
+<br>
+<br>
+
+----------------------------------
+
+# Hypothesis Testing: One-Sample Z-Test
+
+----------------------------------
+
+<br>
+
+## Intended Learning Outcomes
+
+- Describe the steps of null hypotheses significance testing of the mean for one sample when the population variance is known.
+- Summarise the data and identify the inputs for conducting the hypothesis testing.
+- Conduct hypothesis testing, evaluate the outcomes, interpret the results and draw valid conclusions.
+- Explain and generalise the statistical concepts and implement in own area of research. 
+
+<br>
+
+## Activity
+
+Consider the following statements along with specific instructions given for each activity:
+
+- Describe the steps of null hypotheses significance testing and associated assumptions
+- State null and alternative hypotheses.
+- Record the statistical significance level (Type 1 error) and probability tails
+- Identify the appropriate test statistic.
+- Descriptive statistics of the observed sample data.
+- Explain the test statistic, p-value, quantile under type 1 error, 95% confidence interval.
+- Present the summary of the data, interpret the results and draw appropriate conclusions.
+- Assess that the conclusion conforms with test statistic, p-value, quantile under type 1 error and estimated 95% confidence interval.
+
+
+<br>
+
+### Activity 1
+
+- Accept all default values; click the 'Update' button ONCE.
+- Note the z-statistic, p-value, difference, 95% CI of difference.
+
+<br>
+
+### Activity 2
+
+- Reload the app (click 'Refresh' or 'Reload' button in the browser).
+- Accept all default values AND select 'lower-tail probability'
+- Click the 'Update' button ONCE.
+- Note the z-statistic, p-value, difference, 95% CI of difference.
+- Which values got changed compared to Activity 1 and why?
+- What are the interpretations? Do you expect these results?
+
+<br>
+
+### Activity 3
+
+- Reload the app (click 'Refresh' or 'Reload' button in the browser).
+- Accept all default values; click the 'Update' button FIVE times.
+- Note that the first update should produce the identical output as Activity 1.
+- Note the z-statistic and p-value on each simulation (each click of Update button).
+- Do you have different interpretations at each simulation stage? Can you explain the results?
+- Do you have any instance when you cannot reject the null hypotheses? What could be the reasons?
+
+<br>
+
+### Activity 4
+
+- Reload the app (click 'Refresh' or 'Reload' button in the browser).
+- Select "Check the box to update instantly".
+- Investigate the effect of the following:
+  - Increase and decrease $\mu_0$
+  - Increase and decrease $\sigma$
+  - Increase and decrease sample size
+  - Increase and decrease type 1 error
+  - Change the probability tail to lower/upper or both
+- Explain and interpret the outcomes for each scenario.
+- Do you have any instance when the outcomes are different from what you expected given the TRUTH is known?
+- What could be the reasons?
+- While explaining, keep in mind that ABACUS is simulating the data at each instance aligning with the Frequentist inferential framework. When in doubt, deselect 'check the box to update instantly' and click the 'Update' button multiple times and explore each outcome.
+- Also, note that the statistical power of a test depends on other essential components. Can you explain these components based on your observations with different scenarios above?
+
+<br>
+
+### Activity 5
+
+- Reload the app (click 'Refresh' or 'Reload' button in the browser).
+- Identify a variable from your subject area.
+- Enter the true population mean and true population standard deviation for the variable (based on literature or prior available data).
+- Explore the sampling scenarios and explain the outcomes due to changes of mu0, sigma, sample size, type 1 error and probability tail.
+
+
+<br>
+<br>
+
+
+
+----------------------------------
+
+# Hypothesis Testing: One-Sample Student's t-Test
+
+----------------------------------
+
+<br>
+
+## Intended Learning Outcomes
+
+- Describe the steps of null hypotheses significance testing. 
+- Test the null hypothesis that the sample data are from a population with a hypothesised mean when the population variance is known.
+- Summarise the data and identify the inputs for conducting the hypothesis testing and associated assumptions.
+- Conduct hypothesis testing, evaluate the outcomes, interpret the results and draw valid conclusions.
+- Explain and generalise the statistical concepts and implement in own area of research.
+
+
+<br>
+
+## Activity
+
+Consider the following statements along with specific instruction given for each activity:
+
+- Describe the steps of null hypotheses significance testing
+- State null and alternative hypotheses
+- Record the statistical significance level (Type 1 error) and probability tails
+- Identify the appropriate test statistic
+- Descriptive statistics of the observed sample data
+- Explain the test statistic, p-value, quantile under type 1 error, 95% confidence interval
+- Present the summary of the data, interpret the results and draw appropriate conclusions
+- Assess that the conclusion conforms with test statistic, p-value, quantile under type 1 error, 95% confidence interval  
+
+
+<br>
+
+### Activity 1
+
+- Accept all default values; click the 'Update' button ONCE.
+- Note the t-statistic, p-value, difference and 95% CI of difference.
+- Do you expect these results given the TRUTH is known? Explain.
+
+<br>
+
+### Activity 2
+
+- Reload the app (click 'Refresh' or 'Reload' button in the browser).
+- Accept all default values and ENTER: $\sigma = 3$, sample size = 50
+- Click the 'Update' button ONCE
+- Note the t-statistic, p-value, difference and 95% CI of difference
+- What are the interpretations? Do you expect these results?
+
+<br>
+
+### Activity 3
+
+- Reload the app (click 'Refresh' or 'Reload' button in the browser).
+- Accept all default values; click the 'Update' button FIVE times.
+- Note that the first update should produce the identical output as Activity 1.
+- Note the t-statistic and p-value on each simulation (each click of Update button)
+- Do you have different interpretations at each simulation stage? Can you explain the results?
+- Do you have any instance when you cannot reject the null hypotheses? What could be the reasons?
+- How do compare these outcomes with the similar activity that you conducted for 'Hypothesis testing: One sample, known variance'
+
+<br>
+
+### Activity 4
+
+- Reload the app (click 'Refresh' or 'Reload' button in the browser).
+- Check the box to update instantly.
+- Investigate the following scenarios and explain each instance:
+  - Increase and decrease $\mu_0$
+  - Increase and decrease $\sigma$
+  - Increase and decrease sample size
+  - Increase and decrease type 1 error
+  - Change the probability tail to lower/upper or both
+- Explain and interpret the outcomes for each scenario.
+- Do you have any instance when the outcomes are different from what you expected given the TRUTH is known?
+- What could be the reasons?
+- While explaining, keep in mind that ABACUS is simulating the data at each instance aligning with the Frequentist inferential framework. When in doubt, deselect 'check the box to update instantly' and click the 'Update' button multiple times and explore each outcome.
+- Also, note that the statistical power of a test depends on other essential components. Can you explain these components based on your observations with different scenarios above?
+
+<br>
+
+### Activity 5
+
+- Reload the app (click 'Refresh' or 'Reload' button in the browser).
+- Identify a variable from your subject area.
+- Enter the true population mean and true population standard deviation for the variable (based on literature or prior available data).
+- Explore the sampling scenarios and explain the outcomes due to changes of mu0, sigma, sample size, type 1 error and probability tail.
+
+<br>
+<br>
+
+
+
+
+
+----------------------------------
+
+# Hypothesis Testing: Two-Sample Independent (Unpaired) t-Test
+
+----------------------------------
+
+<br>
+
+## Intended Learning Outcomes
+
+- Describe the steps of null hypotheses significance testing. 
+- Test the null hypothesis that two independent groups of observations are sampled from the same population.
+- Summarise the data and identify the inputs for conducting the hypothesis testing and associated assumptions.
+- Conduct hypothesis testing, evaluate the outcomes, interpret the results and draw valid conclusions.
+- Explain and generalise the statistical concepts and implement in own area of research. 
+
+
+<br>
+
+## Activity
+
+Consider the following statements along with specific instruction given for each activity:
+
+- Describe the steps of null hypotheses significance testing
+- State null and alternative hypotheses
+- Record the statistical significance level (Type 1 error) and probability tails
+- Identify the appropriate test statistic
+- Descriptive statistics of the observed sample data
+- Explain the test statistic, p-value, quantile under type 1 error, 95% confidence interval
+- Present the summary of the data, interpret the results and draw appropriate conclusions
+- Evaluate the assumptions of the test
+- Assess that the conclusion conforms with test statistic, p-value, quantile under type 1 error and 95% confidence interval
+
+
+<br>
+
+### Activity 1
+
+- Accept all default values; click the 'Update' button ONCE.
+- Note the t-statistic, p-value, mean difference, 95% CI of the mean difference.
+- Do you expect these results given the TRUTH is known? Explain.
+
+<br>
+
+### Activity 2
+
+- Reload the app (click 'Refresh' or 'Reload' button in the browser).
+- Accept all default values AND enter sample size for Group 2 = 15.
+- Click the 'Update' button ONCE.
+- Note the t-statistic, p-value, difference and 95% CI of difference.
+- What are the interpretations? Do you expect these results?
+
+<br>
+
+### Activity 3
+
+- Reload the app (click 'Refresh' or 'Reload' button in the browser).
+- Accept all default values; click the 'Update' button FIVE times.
+- Note that the first update should produce the identical output as Activity 1.
+- Note the t-statistic and p-value on each simulation (each click of Update button).
+- Do you have different interpretations at each simulation stage? Can you explain the results?
+- Do you have any instance when you cannot reject the null hypotheses? What could be the reasons?
+
+<br>
+
+### Activity 4
+
+- Reload the app (click 'Refresh' or 'Reload' button in the browser).
+- Check the box to update instantly.
+- Investigate the following scenarios and explain each instance:
+  - Increase and decrease $\mu_1$ or $\mu_2$
+  - Increase and decrease $\sigma$
+  - Increase and decrease sample size
+  - Increase and decrease type 1 error
+  - Change the probability tail to lower/upper or both
+- Explain and interpret the outcomes for each scenario.
+- Do you have any instance when the outcomes are different from what you expect given the TRUTH is known?
+- What could be the reasons?
+- While explaining, keep in mind that ABACUS is simulating the data at each instance aligning with the Frequentist inferential framework. When in doubt, deselect 'check the box to update instantly' and click the 'Update' button multiple times and explore each outcome.
+- Also, note that the statistical power of a test depends on other essential components. Can you explain these components based on your observations with different scenarios above?
+
+<br>
+
+### Activity 5
+
+- Reload the app (click 'Refresh' or 'Reload' button in the browser).
+- Identify a variable from your subject area.
+- Enter the true population means (equal as well as unequal) and true population standard deviation for the variable (based on literature or prior available data).
+- Explore the sampling scenarios and explain the outcomes due to changes of $\mu_0$, $\sigma$, sample size, type 1 error and probability tail.
+
+
+<br>
+<br>
+
+
+
+
+----------------------------------
+
+# Hypothesis Testing: One-way Analysis of Variance
+
+----------------------------------
+
+<br>
+
+## Intended Learning Outcomes
+
+- Describe the steps of null hypotheses significance testing.
+- Test the null hypothesis that three independent groups of observations are sampled from the same population.
+- Summarise the data and identify the inputs for conducting the hypothesis testing and associated assumptions.
+- Conduct hypothesis testing, evaluate the outcomes, interpret the results and draw valid conclusions.
+- Explain and generalise the statistical concepts and implement in own area of research. 
+
+
+<br>
+
+## Activity
+
+Consider the following statements along with specific instruction given for each activity:
+
+- Describe the steps of null hypotheses significance testing.
+- State null and alternative hypotheses.
+- Record the statistical significance level (Type 1 error) and probability tails
+- Identify the appropriate test statistic.
+- Present the descriptive statistics of the observed sample data.
+- Explain the test statistic, p-value, quantile under type 1 error and 95% confidence interval.
+- Present the summary of the data, interpret the results and draw appropriate conclusions.
+- Evaluate the assumptions of the test.
+- Explain the changes in between and within sum of squares and mean squares due to changes in inputs.
+- Assess that the conclusion conforms with test statistic, p-value, quantile under type 1 error and 95% confidence interval.
+
+
+<br>
+
+### Activity 1
+
+- Accept all default values; click the 'Update' button ONCE.
+- Note the sum of squares, mean squares, F-statistic, p-value, quantile, mean difference and 95% CI of difference.
+- Do you expect these results given the TRUTH is known? Explain.
+
+<br>
+
+### Activity 2
+
+- Reload the app (click 'Refresh' or 'Reload' button in the browser).
+- Accept all default values AND enter sample size for all groups = 10.
+- Click the 'Update' button ONCE.
+- Note the sum of squares, mean squares, F-statistic, p-value, quantile, mean difference and 95% CI of difference.
+- What are the interpretations? Do you expect these results?
+
+<br>
+
+### Activity 3
+
+- Reload the app (click 'Refresh' or 'Reload' button in the browser).
+- Accept all default values; click the 'Update' button FIVE times.
+- Note that the first update should produce the identical output as Activity 1.
+- Note the sum of squares, mean squares, F-statistic, p-value, quantile, mean difference and 95% CI of difference for each click of the 'Update' button.
+- Do you have different interpretations at each simulation stage? Can you explain the results?
+- Do you have any instance when you cannot reject the null hypotheses? What could be the reasons?
+
+<br>
+
+### Activity 4
+
+- Reload the app (click 'Refresh' or 'Reload' button in the browser)
+- Check the box to update instantly
+- Investigate the following scenarios and explain each instance:
+  - Increase and decrease $\mu_1$ / $\mu_2$ / $\mu_3$
+  - Increase and decrease $\sigma$
+  - Increase and decrease sample size
+  - Increase and decrease type 1 error
+  - Change the probability tail to lower/upper or both
+- Explain and interpret the outcomes for each scenario
+- Do you have any instance when the outcomes are different from what you expect given the TRUTH is known?
+- What could be the reasons?
+- While explaining, keep in mind that ABACUS is simulating the data at each instance aligning with the Frequentist inferential framework. When in doubt, deselect 'check the box to update instantly' and click the 'Update' button multiple times and explore each outcome.
+- Also, note that the statistical power of a test depends on other essential components. Can you explain these components based on your observations with different scenarios above?
+
+<br>
+
+### Activity 5
+
+- Reload the app (click 'Refresh' or 'Reload' button in the browser).
+- Identify a variable from your subject area.
+- Enter the true population means (equal as well as unequal) and true population standard deviation for the variable (based on literature or prior available data).
+- Explore the sampling scenarios and explain the outcomes due to changes of $\mu$, $\sigma$, sample size, type 1 error and probability tail.
+
+
+<br>
+<br>
+
+

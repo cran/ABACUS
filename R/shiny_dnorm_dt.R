@@ -1,0 +1,59 @@
+#' Shiny App to Explore Properties of Normal and Student's t Distributions
+#'
+#' @name shiny_dnorm_dt
+#' @aliases shiny_dnorm_dt
+#' @description An interactive Shiny app to demonstrate Normal and Student's t distributions.
+#' @usage shiny_dnorm_dt()
+#'
+#' @details The interactive Shiny app demonstrates the properties of Normal and Student's t distributions.
+#'     The app considers parameters (mean and standard deviation) of the standard Normal distribution
+#'     along with Student's t distribution given degrees of freedom.
+#'
+#'     The left panel includes the user inputs for
+#'     \strong{Parameters} of standard Normal distribution (mean = 0, sd = 1) and
+#'     Student's \code{t} distribution (degrees of freedom), and
+#'     \strong{Probability} with options to change cumulative probability and tails of probability.
+#'     To alter the input values, move the point on the slider for the degrees of freedom
+#'     of \code{t} distribution and explore the changes in different tabs (see below).
+#'
+#'
+#' @return The outcomes are presented in two tabs.
+#'     \item{Probability Density Function}{displays the probability density function of
+#'     the standard Normal distribution (red) and \code{t} distribution (blue).}
+#'     \item{Distribution & Probability}{contains the plot for the probablity density function of
+#'     the standard Normal distribution and Student's \code{t} distribution with given degrees of freedom.}
+#'
+#'
+#' @note \url{https://shiny.abdn.ac.uk/Stats/apps/}
+#'
+#' @author Mintu Nath
+#'
+#' @seealso Function in base R for normal distribution, including
+#'          \code{\link{dnorm}}, \code{\link{pnorm}},
+#'          \code{\link{qnorm}}, \code{\link{rnorm}}
+#'          \code{\link{dt}}, \code{\link{pt}}
+#'          \code{\link{qt}}, \code{\link{rt}}
+#'
+#' @examples
+#' if(interactive()){
+#'     library(ggplot2)
+#'     library(shiny)
+#'     library(ABACUS)
+#'     # Run shiny app
+#'     shiny_dnorm_dt()
+#' }
+#'
+#' @import shiny
+#' @import ggplot2
+#' @export
+
+
+# Function
+
+shiny_dnorm_dt <- function() {
+
+  shiny::runApp(appDir = system.file("app_dnorm_dt", package = "ABACUS"), launch.browser = TRUE)
+  Sys.setenv("shiny_dnorm_dt" = "")
+
+}
+
